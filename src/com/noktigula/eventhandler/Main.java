@@ -34,6 +34,14 @@ public class Main
 				e.printStackTrace();
 			}
 		}
+		handler.stop();
+		try
+		{
+			handler.join();
+		} catch (InterruptedException e)
+		{
+			e.printStackTrace();
+		}
 		System.out.println("Success: " + countingCallback.getSuccesCount() + " fail: " + countingCallback.getFailureCount());
 		System.out.println("Test 1 done");
 	}
